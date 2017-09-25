@@ -1,0 +1,51 @@
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid greenyellow;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#regbutton {
+    background-color: darkcyan;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.container {
+    padding: 10px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+body
+{
+    background-color: cyan;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: mintcream;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.button {
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}

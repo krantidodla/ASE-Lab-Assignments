@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Style1.css">
+    <script type="text/javascript" src="app.js" ></script>
+
+</head>
+<body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '298432600635999',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.10'
+        });
+        FB.getLoginStatus(function (response) {
+            if(response.status === 'connected'){
+                document.getElementById('status').innerHTML = 'Connected';
+                document.getElementById('Login').onclick = "location.href = 'YoutubeAPI.html";
+            }
+            else if(response.status === 'not_authorized'){
+                document.getElementById('status').innerHTML = 'not_authorized';
+            }
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function loginFB(){
+        FB.login(function (response) {
+            if(response.status === 'connected'){
+                document.getElementById('status').innerHTML = 'Connected';
+            }
+            else if(response.status === 'not_authorized'){
+                document.getElementById('status').innerHTML = 'not_authorized';
+            }
+            else {
+                document.getElementById('status').innerHTML = 'You are logged into Facebook';
+            }
+        })
+    }
+</script>
+
+
+
+<h1 align="center">Login to the Account</h1>
+
+    <form class="modal-content animate" method="get" action="" onsubmit="return login(this);" id="signon">
+
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Username" name="uname">
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Password" name="psw">
+
+            <input type="button" id="Login" onclick="location.href='YoutubeAPI.html'" value="Login" class="button"><br><br>
+            <button class = "button" style='background-color: #3B5998' onclick="loginFB()">Login With FB</button>
+            <div id="status"></div>
+            <label> <h3 align="center"><b>Sign Up below</b></h3></label> <br>
+            <input type="button" onclick="location.href='Register.html'" value="Register" class="button">
+
+        </div>
+    </form>
+
+
+
+
+
+
+</body>
+</html>

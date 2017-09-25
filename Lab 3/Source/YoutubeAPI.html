@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        //var b="orange";
+        var i=0
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $http) {
+            $scope.fet=function(){
+                var b=document.getElementById("in").value;
+                $scope.myWelcome=b;
+                $http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q="+b+"&type=video&key=AIzaSyBWC1QyxfIEwOFRdRUXoLP40EbJYF3WOyg")
+                    .then(function(response) {
+                        var myJSON = response.data.items;
+                        //var myObj = JSON.parse(myJSON);
+                        // $scope.myWelcome=b;
+                        //  $scope.myWelcome=myJSON[0].snippet.thumbnails.url;
+                        //  $scope.le=response.data.items.length;
+                        // $scope.le=myJSON[i].kind;
+                        for(i=0;i<5;i++)
+                        {
+                            $('.result').append("<div class='res w3-card-4 w3-white'><div class='img w3-card-4 w3-red'><img src='"+myJSON[i].snippet.thumbnails.medium.url+"' /></div><div class='des w3-card-4 w3-blue'><br>CHANNEL TITLE: "+myJSON[i].snippet.channelTitle +"<br><br>VIDEOTITLE: "+myJSON[i].snippet.title+"<br><br>DESCRIPTION: "+myJSON[i].snippet.description+"</div></div>");
+                        }
+                    });
+            }
+        });
+    </script>
+    <style>
+        .body{
+            width:100%;
+            height:auto;
+            margin:0px;
+        }
+        .b1{
+            margin:0px;
+        }
+        .b2{
+            margin-top:0px;
+            padding:1%;;
+        }
+        .res{
+            width:80%;
+            height:30%;
+            margin-top:2%;
+            margin-left:10%;
+            padding:9px;
+        }
+        .res .img{
+            width:30%;
+            height:100%;
+            float:left;
+        }
+        .img img{
+            width:100%;
+            height:100%;
+        }
+        .res .des{
+            width:70%;
+            height:100%;
+            float:left;
+        }
+        input[type=text]{
+            width: 80%;
+            padding: 12px 20px;
+            margin-left:5%;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button{
+            width:7%;
+            height:7%;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="b1 w3-panel w3-teal ">
+    <h2><center><p>WELCOME</p></center></h2>
+</div>
+<div class="b2 w3-blue w3-panel" ng-app="myApp" ng-controller="myCtrl">
+
+    <input type="text" id="in" name="firstname" placeholder="Search..">&nbsp<button ng-click="fet()">SEARCH</button>
+
+    <h1>{{myWelcome}}</h1>
+
+    <h1>{{le}}</h1>
+
+</div>
+<div class="result">
+
+</div>
+
+
+
+</body>
+</html>
