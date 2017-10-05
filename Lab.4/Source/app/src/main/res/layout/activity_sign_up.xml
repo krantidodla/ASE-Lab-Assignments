@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dinesh.lab3.SignUp">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/butback"
+        android:onClick="open"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="64dp"
+        android:layout_height="29dp"
+        android:checked="true"
+        android:fontFamily="serif"
+        android:lineSpacingExtra="18sp"
+        android:text="Male"
+        android:textAlignment="viewStart"
+        android:textSize="12sp"
+        android:typeface="serif"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="149dp"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="41dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="98dp"
+        android:layout_height="29dp"
+        android:fontFamily="serif"
+        android:lineSpacingExtra="18sp"
+        android:text="Female"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        android:typeface="serif"
+        tools:layout_editor_absoluteX="193dp"
+        tools:layout_editor_absoluteY="149dp"
+        android:layout_alignTop="@+id/radioButton"
+        android:layout_toEndOf="@+id/radioButton" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:inputType="textEmailAddress"
+        android:lineSpacingExtra="14sp"
+        android:text="Email"
+        android:textAlignment="viewStart"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="211dp"
+        android:layout_below="@+id/radioButton"
+        android:layout_alignStart="@+id/radioButton"
+        android:layout_marginTop="28dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="119dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editText4"
+        android:layout_marginTop="50dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="87dp"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/radioButton" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_below="@+id/editText6"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Password"
+        android:inputType="textPassword" />
+</RelativeLayout>
