@@ -1,0 +1,31 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<style>
+		body{
+			background: url("img.jpeg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body ng-app="ToDoList" align="center">
+
+<div ng-controller="MainController">
+
+	<singlelist mylist="books"></singlelist>
+	<input ng-model="addBook">
+	<button ng-click="addItem(books.list, addBook)">Add This</button>
+</div>
+
+<!-- Modules -->
+<script type="text/javascript" src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/MainController.js"></script>
+
+<!-- Directives -->
+<script src="js/directives/singlelist.js"></script>
+
+</body>
+</html>
